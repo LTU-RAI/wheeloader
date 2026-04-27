@@ -2,6 +2,8 @@
 
 This project provides a ROS 2-based interface to control a vehicle's **motor (drive)**, **steering**, **dumper**, and **bucket** using the `/cmd_vel` topic. A subscriber node listens to velocity commands and sends them to the hardware (e.g., via serial).
 
+The code can be found at this directory in the os of the wheeloader (you can skip the following installation(: /home/etruck/etruck/ws
+
 ## Prerequisites
 
 - ROS 2 (tested with Humble)
