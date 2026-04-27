@@ -45,17 +45,17 @@ class Params:
     pose_topic: str = "/vrpn_mocap/wheelloader/pose"
     cmd_topic: str = "/cmd_vel"
 
-    target0_x: float = -1.8
+    target0_x: float = 0.0
     target0_y: float = 2.0
     target1_x: float = 0.0
     target1_y: float = 0.0
 
-    position_tolerance: float = 0.01
-    yaw_tolerance_deg: float = 1.0
-    stop_hold_time: float = 1.0
+    position_tolerance: float = 0.1
+    yaw_tolerance_deg: float = 0.0
+    stop_hold_time: float = 5.0
 
     control_rate_freq: float = 10.0
-    downsample_divisor: int = 2
+    downsample_divisor: int = 1
 
     kp_pos: float = 0.8
     ki_pos: float = 0.05
@@ -89,9 +89,9 @@ class Params:
 
 class State(str, Enum):
     HOLD_NO_POSE = "HOLD_NO_POSE"
-    DRIVE_TO_P1 = "DRIVE_TO_PI"
-    STOP_AT_P1 = "STOP_AT_PI"
-    UTURN_AT_P1 = "UTURN_AT_PI"
+    DRIVE_TO_P1 = "DRIVE_TO_P1"
+    STOP_AT_P1 = "STOP_AT_P1"
+    UTURN_AT_P1 = "UTURN_AT_P1"
     DRIVE_TO_P0 = "DRIVE_TO_P0"
     STOP_AT_P0 = "STOP_AT_P0"
     UTURN_AT_P0 = "UTURN_AT_P0"

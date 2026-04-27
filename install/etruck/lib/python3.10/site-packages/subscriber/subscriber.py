@@ -8,10 +8,8 @@ class Subscriber(Node):
     def __init__(self):
         super().__init__('subscriber')
 
-        # Open serial port to Arduino
         self.ser = serial.Serial('/dev/ttyUSB0', 115200, timeout=1)
 
-        # Create subscriber to /cmd_vel
         self.subscription = self.create_subscription(
             Twist,
             '/cmd_vel',
@@ -20,7 +18,6 @@ class Subscriber(Node):
         )
 
     def twist_callback(self, msg):
-        # Get values from Twist
         throttle = msg.linear.x  
         steer = msg.angular.z     
         dumper = msg.linear.y    
